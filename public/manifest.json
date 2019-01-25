@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "SignalWeb",
+  "name": "Browse the web of signals from MAX-IV PLC's",
   "icons": [
     {
       "src": "favicon.ico",
