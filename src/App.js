@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import '../public/plc_data.js';
+import data from './plc_data.js';
 
 class App extends Component {
   constructor(props) {
@@ -12,9 +12,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('public/plc_data.json')
-      .then((json_obj) => console.log(json_obj))
-      .catch((err) => console.log(err))
+    this.setState({ data });
   }
 
   render() {

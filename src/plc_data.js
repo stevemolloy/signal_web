@@ -1,4 +1,4 @@
-{
+export default {
     "unidentified objects": {
         "R3_A110310_CAB11_CTL_5SMD01_ALM": {},
         "R3_A110310_CAB11_CTL_5SMD01": {},
