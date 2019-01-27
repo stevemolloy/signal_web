@@ -8,7 +8,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: null
+      data: null,
+      display_data: null,
+      breadcrumbs: []
     }
   }
 
@@ -20,8 +22,15 @@ class App extends Component {
   }
 
   clickHandler = (val) => {
+    const breadcrumbs = this.state.breadcrumbs.concat(val);
+    var new_display_data = this.state.data;
+    for (var i=0; i<breadcrumbs.length; i++) {
+      new_display_data = new_display_data[breadcrumbs[i]];
+    }
+
     this.setState({
-      display_data: this.state.data[val]
+      display_data: new_display_data,
+      breadcrumbs: breadcrumbs
     });
   }
 
