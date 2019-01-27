@@ -13,7 +13,16 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ data });
+    this.setState({
+      data: data,
+      display_data: data
+    });
+  }
+
+  clickHandler = (val) => {
+    this.setState({
+      display_data: this.state.data[val]
+    });
   }
 
   render() {
@@ -22,7 +31,8 @@ class App extends Component {
         <Header title="PLC Signal Web Browser"/>
         <Body
           text="PLC Signal Web Browser"
-          data={this.state.data}
+          data={this.state.display_data}
+          clickHandler={this.clickHandler.bind(this)}
         />
       </>
     );
