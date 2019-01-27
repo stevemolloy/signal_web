@@ -61,6 +61,7 @@ class App extends Component {
           data={this.state.display_data}
           clickHandler={this.clickHandler.bind(this)}
           backClickHandler={this.backClickHandler.bind(this)}
+          needBackBtn={this.state.breadcrumbs.length>0}
         />
       </>
     );

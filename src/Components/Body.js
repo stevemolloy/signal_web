@@ -13,8 +13,15 @@ const body = (props) =>  {
     </li>
   );
 
+  const backBtn = (
+    <button onClick={(e) => props.backClickHandler(e)}>
+      Back
+    </button>
+  )
+
   return (
     <div className="App-body">
+      {props.needBackBtn ? backBtn : (<></>)}
       <ul>
         {listconts}
       </ul>
