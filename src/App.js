@@ -21,17 +21,35 @@ class App extends Component {
     });
   }
 
-  clickHandler = (val) => {
-    const breadcrumbs = this.state.breadcrumbs.concat(val);
+  getNewDisplayData = (breadcrumbs) => {
     var new_display_data = this.state.data;
+
     for (var i=0; i<breadcrumbs.length; i++) {
       new_display_data = new_display_data[breadcrumbs[i]];
     }
+
+    return new_display_data;
+  }
+
+  clickHandler = (val) => {
+    const breadcrumbs = this.state.breadcrumbs.concat(val);
+    const new_display_data = this.getNewDisplayData(breadcrumbs);
 
     this.setState({
       display_data: new_display_data,
       breadcrumbs: breadcrumbs
     });
+  }
+
+  backClickHandler = () => {
+    const breadcrumbs = this.state.breadcrumbs;
+    breadcrumbs.pop();
+
+    const new_display_data = this.getNewDisplayData(breadcrumbs);
+    this.setState({
+      display_data: new_display_data,
+      breadcrumbs: breadcrumbs
+    })
   }
 
   render() {
@@ -42,6 +60,7 @@ class App extends Component {
           text="PLC Signal Web Browser"
           data={this.state.display_data}
           clickHandler={this.clickHandler.bind(this)}
+          backClickHandler={this.backClickHandler.bind(this)}
         />
       </>
     );
