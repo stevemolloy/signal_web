@@ -12,6 +12,10 @@
   color: white;
 }
 
+.App-header h1 {
+  margin: 5px 0px 0px 0px;
+}
+
 .App-body {
   background-color: white;
   display: flex;
@@ -32,10 +36,22 @@
   color: #61dafb;
 }
 
+.breadcrumbs-list {
+  list-style: none;
+  align-items: left;
+}
+
 .breadcrumbs-list li {
-  float: left;
+  display: inline;
+  font-size: 18px;
+}
+
+.breadcrumbs-list li+li:before  {
   padding: 8px;
-  margin: 10px 0px;
-  background-color: #a3aab8;
-  font-size: calc(6px + 2vmin);
+  color: white;
+  content: "/\00a0";
+}
+/* Add a color on mouse-over */
+.breadcrumbs-list li:hover {
+  color: #01447e;
 }

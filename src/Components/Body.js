@@ -19,23 +19,8 @@ const body = (props) =>  {
     listconts = <li>{props.data}</li>;
   }
 
-  let breadcrumbList = null;
-  if (props.breadcrumbs.length > 0) {
-    breadcrumbList = props.breadcrumbs.map((element, index) =>
-      <li
-        onClick={(e) => props.breadcrumbClickHandler(index, e)}
-        key={index}
-        >
-        {index === props.breadcrumbs.length-1 ? element : element + ' >>'}
-      </li>
-    );
-  }
-
   return (
     <div className="App-body">
-      <ul className="breadcrumbs-list">
-        {breadcrumbList}
-      </ul>
       <ul>
         {listconts}
       </ul>

@@ -54,13 +54,15 @@ class App extends Component {
   render() {
     return (
       <>
-        <Header title="PLC Signal Web Browser"/>
+        <Header
+          title="PLC Signal Web Browser"
+          breadcrumbs={this.state.breadcrumbs}
+          breadcrumbClickHandler={this.breadcrumbClickHandler.bind(this)}
+        />
         <Body
           text="PLC Signal Web Browser"
           data={this.state.display_data}
-          breadcrumbs={this.state.breadcrumbs}
           clickHandler={this.clickHandler.bind(this)}
-          breadcrumbClickHandler={this.breadcrumbClickHandler.bind(this)}
         />
       </>
     );
