@@ -3,7 +3,6 @@ import React from 'react';
 const body = (props) =>  {
   if (!props.data) return <></>;
 
-  console.log(isObject(props.data));
   let listconts;
   if (isObject(props.data)) {
     const sig_objs = Object.keys(props.data);
@@ -19,6 +18,18 @@ const body = (props) =>  {
     listconts = <li>{props.data}</li>;
   }
 
+  let breadcrumbList = null;
+  if (props.breadcrumbs.length > 0) {
+    breadcrumbList = props.breadcrumbs.map((element, index) =>
+      <li
+        className="breadcrumbs-list"
+        key={index}
+        >
+        {index === props.breadcrumbs.length-1 ? element : element + ' >>'}
+      </li>
+    );
+  }
+
   const backBtn = (
     <button onClick={(e) => props.backClickHandler(e)}>
       Back
@@ -27,6 +38,9 @@ const body = (props) =>  {
 
   return (
     <div className="App-body">
+      <ul>
+        {breadcrumbList}
+      </ul>
       {props.needBackBtn ? backBtn : (<></>)}
       <ul>
         {listconts}

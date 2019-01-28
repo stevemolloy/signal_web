@@ -41,3 +41,8 @@
 .App-link {
   color: #61dafb;
 }
+
+.breadcrumbs-list {
+  float: left;
+  padding: 8px;
+}

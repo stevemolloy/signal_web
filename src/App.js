@@ -59,9 +59,10 @@ class App extends Component {
         <Body
           text="PLC Signal Web Browser"
           data={this.state.display_data}
+          breadcrumbs={this.state.breadcrumbs}
+          needBackBtn={this.state.breadcrumbs.length>0}
           clickHandler={this.clickHandler.bind(this)}
           backClickHandler={this.backClickHandler.bind(this)}
-          needBackBtn={this.state.breadcrumbs.length>0}
         />
       </>
     );
