@@ -52,6 +52,16 @@ class App extends Component {
     })
   }
 
+  breadcrumbClickHandler = (index) => {
+    const breadcrumbs = this.state.breadcrumbs;
+    breadcrumbs.splice(index+1);
+    const new_display_data = this.getNewDisplayData(breadcrumbs);
+    this.setState({
+      display_data: new_display_data,
+      breadcrumbs: breadcrumbs
+    })
+  }
+
   render() {
     return (
       <>
@@ -63,6 +73,7 @@ class App extends Component {
           needBackBtn={this.state.breadcrumbs.length>0}
           clickHandler={this.clickHandler.bind(this)}
           backClickHandler={this.backClickHandler.bind(this)}
+          breadcrumbClickHandler={this.breadcrumbClickHandler.bind(this)}
         />
       </>
     );

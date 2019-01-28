@@ -22,6 +22,7 @@ const body = (props) =>  {
   if (props.breadcrumbs.length > 0) {
     breadcrumbList = props.breadcrumbs.map((element, index) =>
       <li
+        onClick={(e) => props.breadcrumbClickHandler(index, e)}
         className="breadcrumbs-list"
         key={index}
         >
