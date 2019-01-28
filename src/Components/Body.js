@@ -1,4 +1,5 @@
 import React from 'react';
+import isObject from '../utilities';
 
 const body = (props) =>  {
   if (!props.data) return <></>;
@@ -23,7 +24,6 @@ const body = (props) =>  {
     breadcrumbList = props.breadcrumbs.map((element, index) =>
       <li
         onClick={(e) => props.breadcrumbClickHandler(index, e)}
-        className="breadcrumbs-list"
         key={index}
         >
         {index === props.breadcrumbs.length-1 ? element : element + ' >>'}
@@ -31,32 +31,16 @@ const body = (props) =>  {
     );
   }
 
-  const backBtn = (
-    <button onClick={(e) => props.backClickHandler(e)}>
-      Back
-    </button>
-  )
-
   return (
     <div className="App-body">
-      <ul>
+      <ul className="breadcrumbs-list">
         {breadcrumbList}
       </ul>
-      {props.needBackBtn ? backBtn : (<></>)}
       <ul>
         {listconts}
       </ul>
     </div>
   );
-}
-
-const isObject = (val) => {
-    if (val === null) {
-      return false;
-    }
-    return (
-      (typeof val === 'function') || (typeof val === 'object')
-    );
 }
 
 export default body;

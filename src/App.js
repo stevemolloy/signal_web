@@ -41,17 +41,6 @@ class App extends Component {
     });
   }
 
-  backClickHandler = () => {
-    const breadcrumbs = this.state.breadcrumbs;
-    breadcrumbs.pop();
-
-    const new_display_data = this.getNewDisplayData(breadcrumbs);
-    this.setState({
-      display_data: new_display_data,
-      breadcrumbs: breadcrumbs
-    })
-  }
-
   breadcrumbClickHandler = (index) => {
     const breadcrumbs = this.state.breadcrumbs;
     breadcrumbs.splice(index+1);
@@ -70,9 +59,7 @@ class App extends Component {
           text="PLC Signal Web Browser"
           data={this.state.display_data}
           breadcrumbs={this.state.breadcrumbs}
-          needBackBtn={this.state.breadcrumbs.length>0}
           clickHandler={this.clickHandler.bind(this)}
-          backClickHandler={this.backClickHandler.bind(this)}
           breadcrumbClickHandler={this.breadcrumbClickHandler.bind(this)}
         />
       </>

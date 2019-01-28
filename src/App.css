@@ -42,7 +42,7 @@
   color: #61dafb;
 }
 
-.breadcrumbs-list {
+.breadcrumbs-list li {
   float: left;
   padding: 8px;
 }
