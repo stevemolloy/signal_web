@@ -18,12 +18,12 @@ const header = (props) =>  {
       onClick={(e) => props.breadcrumbClickHandler(-1, e)}
       key={-1}
       >
-      Start
+      Top
     </li>
   )
 
   let breadcrumbList = <></>;
-  if (breadcrumbItems) {
+  if (props.breadcrumbs.length>0) {
     breadcrumbList = (
       <ul className="breadcrumbs-list">
         {breadcrumbItems}
