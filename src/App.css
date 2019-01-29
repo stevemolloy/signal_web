@@ -13,7 +13,7 @@
 }
 
 .App-header h1 {
-  margin: 5px 0px 0px 0px;
+  margin: 5px 0px 10px 0px;
 }
 
 .App-body {
@@ -39,6 +39,8 @@
 .breadcrumbs-list {
   list-style: none;
   align-items: left;
+  padding: 5px;
+  margin: 5px;
 }
 
 .breadcrumbs-list li {
@@ -49,7 +51,7 @@
 .breadcrumbs-list li+li:before  {
   padding: 8px;
   color: white;
-  content: "/\00a0";
+  content: ">>\00a0";
 }
 /* Add a color on mouse-over */
 .breadcrumbs-list li:hover {
