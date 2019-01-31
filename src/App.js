@@ -62,6 +62,7 @@ class App extends Component {
         <Body
           text="PLC Signal Web Browser"
           data={this.state.display_data}
+          breadcrumbs={this.state.breadcrumbs}
           clickHandler={this.clickHandler.bind(this)}
         />
       </>

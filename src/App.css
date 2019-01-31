@@ -36,6 +36,22 @@
   color: #668eb1;
 }
 
+.App-body tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.App-body table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+.App-body td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
 .App-link {
   color: #61dafb;
 }
