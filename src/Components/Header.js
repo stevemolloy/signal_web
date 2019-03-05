@@ -1,9 +1,10 @@
 import React from 'react';
 
 const header = (props) =>  {
+  const breadcrumbs = props.breadcrumbs;
   let breadcrumbItems = [];
-  if (props.breadcrumbs.length > 0) {
-    breadcrumbItems = props.breadcrumbs.map((element, index) =>
+  if (breadcrumbs.length > 0) {
+    breadcrumbItems = breadcrumbs.map((element, index) =>
       <li onClick={(e) => props.breadcrumbClickHandler(index, e)}
         key={index} >
         {element}
@@ -12,14 +13,13 @@ const header = (props) =>  {
   }
 
   breadcrumbItems.unshift(
-    <li onClick={(e) => props.breadcrumbClickHandler(-1, e)}
-      key={-1} >
+    <li onClick={(e) => props.breadcrumbClickHandler(-1, e)} key={-1} >
       Top
     </li>
   )
 
   let breadcrumbList = <p> </p>;
-  if (props.breadcrumbs.length>0) {
+  if (breadcrumbs.length>0) {
     breadcrumbList = (
       <ul className="breadcrumbs-list">
         {breadcrumbItems}

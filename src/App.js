@@ -22,9 +22,8 @@ class App extends Component {
   }
 
   getNewDisplayData = (breadcrumbs) => {
-    var new_display_data = this.state.data;
-
-    for (var i=0; i<breadcrumbs.length; i++) {
+    let new_display_data = this.state.data;
+    for (let i=0; i<breadcrumbs.length; i++) {
       new_display_data = new_display_data[breadcrumbs[i]];
     }
 
@@ -34,7 +33,6 @@ class App extends Component {
   clickHandler = (val) => {
     const breadcrumbs = this.state.breadcrumbs.concat(val);
     const new_display_data = this.getNewDisplayData(breadcrumbs);
-
     this.setState({
       display_data: new_display_data,
       breadcrumbs: breadcrumbs
